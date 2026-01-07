@@ -37,7 +37,7 @@ beginBtn.addEventListener('click', function() {
         img.className = 'head-option';
         headSelection.appendChild(img);
          setTimeout(() => {
-        updateHeadOpacity(1); // Head 1 is centered by default
+        updateHeadOpacity(1); 
     }, 0);
     }
     arrowLeft.style.display = 'block';
@@ -52,7 +52,7 @@ resetBtn.addEventListener('click', function() {
     document.getElementById('proceed1').style.display = 'none'; // Hide proceed1
     document.getElementById('proceed2').style.display = 'none'; // Hide proceed2
     document.getElementById('proceed3').style.display = 'none'; // Hide proceed3
-    document.getElementById('finalizeBtn').style.display = 'none'; // Hide finalizeBtn
+    document.getElementById('finalizeBtn').style.display = 'none'; // Hide finalize
      arrowLeft.style.display = 'none';
     arrowRight.style.display = 'none';
     instructions1.style.display = 'none'; // Hide instructions1
@@ -60,15 +60,15 @@ resetBtn.addEventListener('click', function() {
     instructions3.style.display = 'none'; // Hide instructions3
     instructions4.style.display = 'none'; // Hide instructions4
     instructions5.style.display = 'none'; // Hide instructions5
-    finishBtn.style.display = 'none'; // Hide finishBtn
+    finishBtn.style.display = 'none'; // Hide finish
     backgroundContainer.style.display = 'none'; // Hide background container
     const downloadBtn = document.getElementById('DownloadBtn');
     downloadBtn.style.display = 'none'; // Hide download button
-    // Reset finish button
+   
     finishBtn.style.display = 'none';
     finishBtn.disabled = false;
 
-    finishBtn.style.background = ''; // Reset to default
+    finishBtn.style.background = ''; 
     
     // Reset background
     currentBackground = 1;
@@ -104,27 +104,27 @@ let headPosition = 0;
 let headCurrent = 1;
 
 document.addEventListener('keydown', function(event) {
-    // Only move if head selection is visible
+    // Only move if heads are visible
     if (headSelection.style.display !== 'flex') return;
     
-   // Get current head BEFORE calculating movement
+   
 const currentHead = Math.abs(headPosition / 500) + 1;
 
 if (event.key === 'ArrowLeft') {
-    // SPECIAL RULE: If currently on head1, go to head8
+    // If currently on head1, go to head8
     if (currentHead === 1) {
-        headPosition = -3500; // Position for head8
+        headPosition = -3500; // Pos for head8
     } else {
-        headPosition += 500; // Normal movement
+        headPosition += 500; 
     }
 } else if (event.key === 'ArrowRight') {
-    headPosition -= 500; // Normal right movement
+    headPosition -= 500; 
 }
 
-// Calculate new head number
+
 let headNumber = Math.abs(headPosition / 500) + 1;
 
-// Regular wrap logic for other cases
+
 if (headNumber > 8) {
     headNumber = 1;
     headPosition = 0;
@@ -139,16 +139,16 @@ headSelection.style.transform = `translate(${headPosition}px, -50%)`;
 document.getElementById('currentHead').textContent = headNumber;
 headSelection.style.transform = `translate(${headPosition}px, -50%)`;
 
-// Update opacity for all head options
+
     updateHeadOpacity(headNumber);
 });
 
-// Function to update opacity based on which head is centered
+
 function updateHeadOpacity(centeredHeadNumber) {
     const headOptions = document.querySelectorAll('.head-option');
     
     headOptions.forEach((head, index) => {
-        // Head images are in order 1-8 in the DOM
+        
         const headNum = index + 1;
         
         if (headNum === centeredHeadNumber) {
@@ -161,7 +161,7 @@ function updateHeadOpacity(centeredHeadNumber) {
 
 
 
-// Reset position when heads are cleared
+// Reset pos when heads are cleared
 resetBtn.addEventListener('click', function() {
     headPosition = 0;
     headSelection.style.transform = `translateY(-50%)`;
@@ -185,10 +185,10 @@ proceed1Btn.addEventListener('click', function() {
     selectedHead.style.width = '500px';
     selectedHead.style.height = '500px';
     selectedHead.style.objectFit = 'contain';
-    selectedHead.style.position = 'absolute'; // Add this
-    selectedHead.style.top = '0'; // Add this
-    selectedHead.style.left = '0'; // Add this
-    selectedHead.style.zIndex = '3'; // Ensure head is on top
+    selectedHead.style.position = 'absolute'; 
+    selectedHead.style.top = '0'; 
+    selectedHead.style.left = '0'; 
+    selectedHead.style.zIndex = '3'; 
 
     
     characterContainer.appendChild(selectedHead);
@@ -203,7 +203,7 @@ proceed1Btn.addEventListener('click', function() {
         img.className = 'shirt-option';
         shirtSelection.appendChild(img);
          setTimeout(() => {
-        updateShirtOpacity(1); // Shirt 1 is centered by default
+        updateShirtOpacity(1); // Shirt 1 centered by default
     }, 0);
        
 
@@ -221,23 +221,23 @@ document.addEventListener('keydown', function(event) {
     // Only move if shirt selection is visible
     if (shirtSelection.style.display !== 'flex') return;
 
-   // Get current shirt BEFORE calculating movement
+   
 const currentShirt = Math.abs(shirtPosition / 500) + 1;
 
 if (event.key === 'ArrowLeft') {
-    // SPECIAL RULE: If currently on shirt1, go to shirt6
+    // If currently on shirt1, go to shirt6
     if (currentShirt === 1) {
         shirtPosition = -2500; // Position for shirt6
     } else {
-        shirtPosition += 500; // Normal movement
+        shirtPosition += 500; 
     }
 } else if (event.key === 'ArrowRight') {
-    shirtPosition -= 500; // Normal right movement
+    shirtPosition -= 500; 
 }
 
 // Calculate new shirt number
 let shirtNumber = Math.abs(shirtPosition / 500) + 1;
-// Regular wrap logic for other cases
+
 if (shirtNumber > 6) {
     shirtNumber = 1;
     shirtPosition = 0;

@@ -100,7 +100,7 @@ body {
     gap: 0px;
     margin-left: calc(50% - 252px);
     z-index: 10;
-    transition: transform 0.5s ease; /* Add this line */
+    transition: transform 0.5s ease; 
 }
 
 .head-option {
@@ -136,7 +136,7 @@ body {
     gap: 0px;
     margin-left: calc(50% - 252px);
     z-index: 9;
-    transition: transform 0.5s ease; /* Add this line */
+    transition: transform 0.5s ease; 
 }
 
 .shirt-option {
@@ -171,7 +171,7 @@ body {
     gap: 0px;
     margin-left: calc(50% - 252px);
     z-index: 8;
-    transition: transform 0.5s ease; /* Add this line */
+    transition: transform 0.5s ease; 
 }
 
 .pants-option {
@@ -207,7 +207,7 @@ body {
     gap: 0px;
     margin-left: calc(50% - 252px);
     z-index: 10;
-    transition: transform 0.5s ease; /* Add this line */
+    transition: transform 0.5s ease; 
 }
 
 .heart-option {
@@ -237,7 +237,7 @@ body {
 #arrowLeft {
     position: fixed;
     bottom: 40px;
-    left: calc(50% - 200px); /* Position left of center */
+    left: calc(50% - 200px); 
     padding: 10px 10px;
     font-size: 36px;
     cursor: pointer;
@@ -246,14 +246,14 @@ body {
     color: #00c000;
     background-color: black;
     border: #00c000 5px solid;
-    display: none; /* Hidden by default */
+    display: none; 
     z-index: 11;
 }
 
 #arrowRight {
     position: fixed;
     bottom: 40px;
-    right: calc(50% - 200px); /* Position right of center */
+    right: calc(50% - 200px); 
     padding: 10px 10px;
     font-size: 36px;
     cursor: pointer;
@@ -262,7 +262,7 @@ body {
     color: #00c000;
     background-color: black;
     border: #00c000 5px solid;
-    display: none; /* Hidden by default */
+    display: none; 
     z-index: 11;
 }
 
